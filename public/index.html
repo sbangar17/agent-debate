@@ -341,7 +341,7 @@ $("#toTopic").onclick = () => show("s-topic");
 
 /* ---------- 2 · personas ---------- */
 const card = (p,i) => `<div class="card ${selected.includes(p) ? "sel":""}" data-i="${i}" style="--c:${p.color}" title="${esc(p.trait)}">
-    <div class="picwrap"><div class="pic">${caricatureSVG(p.look, p.color)}</div><span class="badge">${p.emoji || "✨"}</span></div><b>${esc(p.name)}</b>${p.kind === "real" ? `<span class="tag">Real person · AI sim</span><em class="role">${esc(p.role || "")}</em>` : ""}<small>${esc(p.trait)}</small></div>`;
+    <div class="picwrap"><div class="pic">${caricatureSVG(p.look, p.color)}</div><span class="badge">${p.emoji || "✨"}</span></div><b>${esc(p.name)}</b><small>${esc(p.trait)}</small></div>`;
 function renderCards() {
   $("#tailGrid").innerHTML = tailored.map(card).join("");
   $("#presetGrid").innerHTML = [...PRESETS, ...customs].map(card).join("");
